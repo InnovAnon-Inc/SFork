@@ -15,12 +15,12 @@ AC_ARG_ENABLE([use-submodules],
 AM_CONDITIONAL([USE_SUBMODULES], [test x"$enable_use_submodules" = "xyes"])
 
 AC_CONFIG_MACRO_DIR([m4])
-AC_CONFIG_SUBDIRS([glitter])
+#AC_CONFIG_SUBDIRS([glitter])
 
 AC_CHECK_HEADERS([stdlib.h unistd.h sys/types.h])
-AC_CHECK_HEADERS([glitter.h ezfork.h])
+AC_CHECK_HEADERS([glitter.h ezfork.h restart.h])
 
-AC_CHECK_LIB([stdlib],[fork],[ezfork])
+AC_CHECK_LIB([stdlib],[fork],[ezfork],[restart])
 
 INNOVANON_WARNINGS([])
 

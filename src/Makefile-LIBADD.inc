@@ -1,1 +1,1 @@
-LIBSFORK_LIBADD =
+LIBSFORK_LIBADD = -lezfork -lrestart

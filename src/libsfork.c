@@ -2,6 +2,9 @@
 #include <config.h>
 #endif
 
+#ifndef _POSIX_SOURCE
+#define _POSIX_SOURCE
+#endif
 #include <signal.h>
 #include <sys/wait.h>
 
@@ -15,7 +18,7 @@ typedef struct {
 } parentcb_wait_t;
 
 __attribute__ ((warn_unused_result))
-private int parentcb_wait (pid_t cpid, void *restrict arg) {
+static int parentcb_wait (pid_t cpid, void *restrict arg) {
    parentcb_wait_t *p        = arg;
    parentcb_t       parentcb = p->parentcb;
    void *restrict   pargs    = p->pargs;
@@ -36,7 +39,7 @@ private int parentcb_wait (pid_t cpid, void *restrict arg) {
 }
 
 __attribute__ ((nonnull (1, 3), warn_unused_result))
-int sfork (parentcb_t parentcb, void *restrict pargs, childcb_t childcb, void *restrict cargs) {
+int sfork (childcb_t childcb, void *restrict cargs, parentcb_t parentcb, void *restrict pargs) {
    parentcb_wait_t p;
    p.parentcb = parentcb;
    p.pargs    = pargs;
