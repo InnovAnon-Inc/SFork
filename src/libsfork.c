@@ -17,7 +17,7 @@ typedef struct {
    void *restrict pargs;
 } parentcb_wait_t;
 
-__attribute__ ((warn_unused_result))
+__attribute__ ((nonnull (2), warn_unused_result))
 static int parentcb_wait (pid_t cpid, void *restrict arg) {
    parentcb_wait_t *p        = arg;
    parentcb_t       parentcb = p->parentcb;
