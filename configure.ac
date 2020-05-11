@@ -22,6 +22,9 @@ AC_CHECK_HEADERS([glitter.h ezfork.h restart.h])
 
 AC_CHECK_LIB([stdlib],[fork],[ezfork],[restart])
 
+LIBSFORK_LIBADD="`PATH=src:$PATH libsfork_config --libs`"
+AC_SUBST(LIBSFORK_LIBADD)
+
 INNOVANON_WARNINGS([])
 
 AC_OUTPUT
