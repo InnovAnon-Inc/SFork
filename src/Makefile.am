@@ -10,4 +10,4 @@ dist_bin_SCRIPTS = libsfork_config
 
 lib_LTLIBRARIES = libsfork.la
 include_HEADERS = sfork.h
-libsfork_la_LIBADD = $(LIBSFORK_LIBADD)
+libsfork_la_LIBADD = @LIBSFORK_LIBADD@
