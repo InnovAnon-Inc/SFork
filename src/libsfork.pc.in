@@ -1,0 +1,15 @@
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+#sfork_utility=sfork-test
+
+Name: @PACKAGE_NAME@
+Description: sfork library
+Version: @PACKAGE_VERSION@
+Libs: -L${libdir} -lsfork
+Cflags: -I${includedir}
+Requires: glitter libezfork
+Requires.private: librestart
+
