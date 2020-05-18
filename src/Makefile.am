@@ -1,6 +1,8 @@
 AM_CPPFLAGS = -D__STDC_INT64__
 
-lib_LTLIBRARIES = libsfork.la
+lib_LTLIBRARIES =
+
+lib_LTLIBRARIES += libsfork.la
 include_HEADERS = sfork.h
 libsfork_la_CPPFLAGS = $(GLITTER_CFLAGS) $(RESTART_CFLAGS) $(EZFORK_CFLAGS)
 libsfork_la_LIBADD   = $(GLITTER_LIBS)   $(RESTART_LIBS)   $(EZFORK_LIBS)
